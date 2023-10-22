@@ -111,7 +111,23 @@ public class TicTacToe extends Application {
                 announceWinner(symbol);
                 return;
             }
+
+            // this comment
+
         }
+        // if no one wins
+        boolean full = true;
+        for (int i = 0; i < GRID_SIZE; i++) {
+            for (int j = 0; j < GRID_SIZE; j++) {
+                if (buttonGrid[i][j].getText().isEmpty()) {
+                    full = false;
+                }
+            }
+        }
+        if (full) {
+            turnText.setText("Draw!");
+        }
+
     }
 
     private void announceWinner(String symbol) {
